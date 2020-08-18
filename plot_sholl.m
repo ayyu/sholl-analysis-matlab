@@ -10,7 +10,7 @@ distances = distances * scales(1);
 threshold = 10;
 lim_conn = connections;
 lim_conn(lim_conn < threshold) = 0;
-limits = [0 distances(find(lim_conn,1,'last')) 0 inf];
+limits = [1 distances(find(lim_conn,1,'last')) 0 inf];
 
 % do some MATLAB plotting here, or output/save DC to a file
 % example plot code is show below
