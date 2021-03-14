@@ -5,6 +5,8 @@ function [dists, conns] = sholl_analysis(image, info, seed)
     dims = info.ImageSize;
     scales = info.PixelDimensions;
     
+    textprogressbar('Progress: ');
+    
     % Loop through each voxel's coordinates
     for x = 1:dims(1)
         for y = 1:dims(2)
@@ -23,7 +25,10 @@ function [dists, conns] = sholl_analysis(image, info, seed)
                 dist_conn(distance) = dist_conn(distance) + conns;
             end
         end
+        textprogressbar(x/dims(1)*100);
     end
+    
+    textprogressbar(' Done.');
     
     % take sqrt at end to save time
     dists = sqrt(cell2mat(keys(dist_conn)));
