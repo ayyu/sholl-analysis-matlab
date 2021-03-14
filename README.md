@@ -1,6 +1,8 @@
 # Sholl analysis in MATLAB
 
-Run this after you have your `fdt_paths.nii.gz` files
+A set of MATLAB scripts to perform Sholl analysis on tractography images in left and right sides. Run this after you have your `fdt_paths.nii.gz` files in the directory structure specified below.
+
+Alternatively, it isn't too hard to change the script to fit your own directory structure. All that's needed is to change how the loops work in the `run_*.m` files.
 
 ## Usage
 
