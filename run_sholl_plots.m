@@ -31,9 +31,10 @@ for i = 1:length(subjects)
         % save outputs in folder
         figure_path = fullfile(side_path, 'sholl.fig');
         savefig(sholl_figure, figure_path);
+        close(sholl_figure);
+        
         output_path = fullfile(side_path, 'bin_output.mat');
         save(output_path, 'bins', 'conns_bins');
-        close(sholl_figure);
     end
     
 end
